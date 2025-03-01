@@ -1,1 +1,1 @@
-web: java -jar backend/build/libs/backend-all.jar
+web: java -jar attendance-tracker/build/libs/backend-all.jar
