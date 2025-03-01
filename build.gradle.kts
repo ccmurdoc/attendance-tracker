@@ -34,6 +34,10 @@ dependencies {
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
+kotlin {
+    jvmToolchain(17)
+}
+
 tasks.create("stage") {
     dependsOn("installDist")
 }
