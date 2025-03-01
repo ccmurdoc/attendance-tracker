@@ -21,7 +21,7 @@ object RabbitMQ {
         connection = factory.newConnection()
         channel = connection.createChannel()
         channel.queueDeclare(QUEUE_NAME, false, false, false, null)
-        println("✅ RabbitMQ initialized with queue: $QUEUE_NAME")
+        println(" RabbitMQ initialized with queue: $QUEUE_NAME")
     }
 
     fun publishAttendance(message: String) {
