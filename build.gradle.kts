@@ -1,6 +1,13 @@
+
+
 plugins {
     kotlin("jvm") version "1.8.10"
     id("io.ktor.plugin") version "2.3.0"
+    id("com.github.ccmurdoc.shadow") version "7.1.2"
+}
+
+application {
+    mainClass.set("com.example.ApplicationKt")
 }
 
 val kotlinVersion = "1.8.10"
@@ -39,5 +46,5 @@ kotlin {
 }
 
 tasks.create("stage") {
-    dependsOn("installDist")
+    dependsOn("installDist", "shadowJar")
 }
