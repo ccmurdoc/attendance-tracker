@@ -1,8 +1,8 @@
 package com.example
 
+import com.rabbitmq.client.Connection
 import com.rabbitmq.client.ConnectionFactory
 import com.rabbitmq.client.Channel
-import com.rabbitmq.client.Connection
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
@@ -12,13 +12,16 @@ object RabbitMQ {
     private lateinit var channel: Channel
 
     fun init() {
-        val factory = ConnectionFactory().apply {
-            host = "localhost"  // Change this if running on Heroku or cloud
-        }
+        val factory = ConnectionFactory()
+
+        // Use the Heroku CloudAMQP URL
+        val uri = System.getenv("CLOUDAMQP_URL") ?: "amqp://guest:guest@localhost"
+        factory.setUri(uri)
+
         connection = factory.newConnection()
         channel = connection.createChannel()
         channel.queueDeclare(QUEUE_NAME, false, false, false, null)
-        println("RabbitMQ initialized and queue declared.")
+        println("✅ RabbitMQ initialized with queue: $QUEUE_NAME")
     }
 
     fun publishAttendance(message: String) {
