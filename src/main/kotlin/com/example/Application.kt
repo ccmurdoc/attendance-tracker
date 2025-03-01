@@ -18,7 +18,10 @@ import com.rabbitmq.client.ConnectionFactory
 import kotlinx.serialization.Serializable
 
 fun main() {
-    embeddedServer(Netty, port = 8080, module = Application::module).start(wait = true)
+    //embeddedServer(Netty, port = 8080, module = Application::module).start(wait = true)
+    val port = System.getenv("PORT")?.toIntOrNull() ?: 8080
+
+    embeddedServer(Netty, port = port, module = Application::module).start(wait = true)
 }
 
 fun Application.module() {
