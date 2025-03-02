@@ -15,7 +15,7 @@ object RabbitMQ {
         val factory = ConnectionFactory()
 
         // Use the Heroku CloudAMQP URL
-        val uri = System.getenv("CLOUDAMQP_URL") ?: "amqp://guest:guest@localhost"
+        val uri = System.getenv("CLOUDAMQP_URL") ?: "amqps://eibmxzlb:RlwyHUZSUKqDrvD2mBbsGiXcdN4eRIOa@woodpecker.rmq.cloudamqp.com/eibmxzlb"
         factory.setUri(uri)
 
         connection = factory.newConnection()

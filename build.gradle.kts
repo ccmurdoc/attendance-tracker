@@ -38,7 +38,8 @@ dependencies {
     //implementation("io.ktor:ktor-server-routing:$ktorVersion")
     implementation("com.rabbitmq:amqp-client:5.16.0")
     implementation("ch.qos.logback:logback-classic:1.2.11")
-
+    implementation("io.ktor:ktor-server-metrics-micrometer:2.3.0")
+    implementation("io.micrometer:micrometer-registry-prometheus:1.11.0")
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }
