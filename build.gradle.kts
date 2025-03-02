@@ -35,6 +35,7 @@ dependencies {
     implementation("io.ktor:ktor-server-auth:$ktorVersion")
     implementation("org.jetbrains.exposed:exposed-dao:0.43.0")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.43.0")
+    implementation("org.postgresql:postgresql:42.5.4")
     //implementation("io.ktor:ktor-server-routing:$ktorVersion")
     implementation("com.rabbitmq:amqp-client:5.16.0")
     implementation("ch.qos.logback:logback-classic:1.2.11")
