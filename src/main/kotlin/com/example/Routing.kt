@@ -8,6 +8,7 @@ import io.ktor.http.*
 import kotlinx.serialization.Serializable
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import com.example.models.Student
 
 @Serializable
 data class Student(val id: Int? = null, val name: String, val attended: Boolean)

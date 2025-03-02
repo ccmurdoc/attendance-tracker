@@ -99,6 +99,7 @@ fun Application.module() {
 */
 package com.example
 
+import com.example.models.Student
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.application.*
@@ -174,5 +175,4 @@ fun Application.module() {
     }
 }
 
-@Serializable
-data class Student(val id: Int? = null, val name: String, val attended: Boolean)
+
